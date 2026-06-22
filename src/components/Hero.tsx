@@ -60,7 +60,7 @@ export default function Hero() {
             className="mt-8 flex flex-wrap gap-3"
           >
             <a
-              href="#https://www.paypal.com/ncp/payment/3XQRBM4T76U7L"
+              href="https://www.paypal.com/ncp/payment/3XQRBM4T76U7L"
               className="group inline-flex items-center gap-2 px-7 py-4 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-full shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.03] transition-all"
             >
               Pay Now
