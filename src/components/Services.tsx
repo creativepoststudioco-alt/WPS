@@ -23,7 +23,6 @@ const webServices = [
   { icon: Palette, title: 'Portfolio Websites', desc: 'Showcase your work beautifully.' },
   { icon: FileCode2, title: 'Landing Pages', desc: 'High-converting campaign pages.' },
   { icon: MonitorSmartphone, title: 'Responsive Design', desc: 'Perfect on every device.' },
-  { icon: Sparkles, title: 'Website Redesign', desc: 'Modernize your existing site.' },
   { icon: Search, title: 'SEO-Friendly', desc: 'Built to rank on Google.' },
 ];
 
