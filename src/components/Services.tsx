@@ -30,8 +30,8 @@ const webServices = [
 const socialServices = [
   { icon: Calendar, title: 'Daily Content', desc: 'Consistent engaging posts.' },
   { icon: MessageSquare, title: 'Story Creation', desc: 'Stories that stop the scroll.' },
-  { icon: FacebookIcon, title: 'Facebook Mgmt', desc: 'Grow your Facebook presence.' },
-  { icon: InstagramIcon, title: 'Instagram Mgmt', desc: 'Aesthetic, on-brand feed.' },
+  { icon: FacebookIcon, title: 'Facebook management', desc: 'Grow your Facebook presence.' },
+  { icon: InstagramIcon, title: 'Instagram management', desc: 'Aesthetic, on-brand feed.' },
   { icon: Users, title: 'Group Promotions', desc: 'Reach targeted communities.' },
 ];
 
