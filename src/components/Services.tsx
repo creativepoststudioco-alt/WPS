@@ -33,7 +33,6 @@ const socialServices = [
   { icon: FacebookIcon, title: 'Facebook Mgmt', desc: 'Grow your Facebook presence.' },
   { icon: InstagramIcon, title: 'Instagram Mgmt', desc: 'Aesthetic, on-brand feed.' },
   { icon: Users, title: 'Group Promotions', desc: 'Reach targeted communities.' },
-  { icon: Megaphone, title: 'Brand Growth', desc: 'Strategy that scales.' },
 ];
 
 export default function Services() {
