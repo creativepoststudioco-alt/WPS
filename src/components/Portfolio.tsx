@@ -32,8 +32,6 @@ const projects = [
     category: 'Social Media',
     image: 'https://images.pexels.com/photos/3850265/pexels-photo-3850265.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
     color: 'from-cyan-500 to-blue-600',
-  }
-];
 
 export default function Portfolio() {
   const ref = useRef<HTMLDivElement>(null);
