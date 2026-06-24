@@ -4,12 +4,6 @@ import { ExternalLink, ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Bloom & Co Boutique',
-    category: 'E-Commerce',
-    image: 'https://images.pexels.com/photos/11412585/pexels-photo-11412585.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
-    color: 'from-pink-500 to-orange-500',
-  },
-  {
     title: 'Urbanlyft Real Estate',
     category: 'Business Website',
     image: 'https://images.pexels.com/photos/3850237/pexels-photo-3850237.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
