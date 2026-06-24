@@ -4,6 +4,12 @@ import { ExternalLink, ArrowUpRight } from 'lucide-react';
 
 const projects = [
   {
+    title: 'Bloom & Co Boutique',
+    category: 'E-Commerce',
+    image: 'https://images.pexels.com/photos/11412585/pexels-photo-11412585.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
+    color: 'from-pink-500 to-orange-500',
+  },
+  {
     title: 'Urbanlyft Real Estate',
     category: 'Business Website',
     image: 'https://images.pexels.com/photos/3850237/pexels-photo-3850237.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
@@ -16,7 +22,7 @@ const projects = [
     color: 'from-emerald-500 to-teal-600',
   },
   {
-    title: 'Nexora Tech Agency',
+   title: 'Nexora Tech Agency',
     category: 'Portfolio',
     image: 'https://images.pexels.com/photos/7653569/pexels-photo-7653569.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
     color: 'from-violet-500 to-purple-600',
@@ -32,12 +38,16 @@ const projects = [
     category: 'Social Media',
     image: 'https://images.pexels.com/photos/3850265/pexels-photo-3850265.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
     color: 'from-cyan-500 to-blue-600',
+  },
+];
+
+const filters = ['All', 'E-Commerce', 'Business Website', 'Landing Page', 'Portfolio', 'Social Media'];
 
 export default function Portfolio() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.1 });
   const [active, setActive] = useState('All');
-
+  
   const filtered = active === 'All' ? projects : projects.filter((p) => p.category === active);
 
   return (
@@ -59,8 +69,8 @@ export default function Portfolio() {
             A curated selection of websites and campaigns that delivered measurable growth.
           </p>
         </motion.div>
-
-        {/* Filters */}
+        
+       {/* Filters */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -87,7 +97,7 @@ export default function Portfolio() {
           {filtered.map((p, i) => (
             <motion.div
               key={p.title}
-              layout
+ layout
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9 }}
