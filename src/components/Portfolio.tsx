@@ -35,8 +35,6 @@ const projects = [
   },
 ];
 
-const filters = ['All', 'E-Commerce', 'Business Website', 'Landing Page', 'Portfolio', 'Social Media'];
-
 export default function Portfolio() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.1 });
