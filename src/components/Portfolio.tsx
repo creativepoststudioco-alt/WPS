@@ -16,12 +16,6 @@ const projects = [
     color: 'from-emerald-500 to-teal-600',
   },
   {
-    title: 'Nexora Tech Agency',
-    category: 'Portfolio',
-    image: 'https://images.pexels.com/photos/7653569/pexels-photo-7653569.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
-    color: 'from-violet-500 to-purple-600',
-  },
-  {
     title: 'Savory Bistro',
     category: 'Restaurant Website',
     image: 'https://images.pexels.com/photos/8886104/pexels-photo-8886104.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=800&w=1200',
@@ -35,7 +29,7 @@ const projects = [
   },
 ];
 
-const filters = ['All', 'Business Website', 'Landing Page', 'Portfolio', 'Social Media'];
+const filters = ['All', 'Business Website', 'Landing Page', 'Social Media'];
 
 export default function Portfolio() {
   const ref = useRef<HTMLDivElement>(null);
