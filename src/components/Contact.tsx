@@ -6,11 +6,35 @@ export default function Contact() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.15 });
   const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
+    setIsSubmitting(true);
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "0d2908b7-d0ea-4563-9fdc-6f79ed29993c");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSent(true);
+        e.currentTarget.reset(); // Form ko clear karne ke liye
+        setTimeout(() => setSent(false), 5000);
+      } else {
+        alert("Kuch galat hua. Kripya dobara prayas karein.");
+      }
+    } catch (error) {
+      alert("Error! Connection check karein.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -108,6 +132,7 @@ export default function Contact() {
                   <input
                     required
                     type="text"
+                    name="name"
                     placeholder="Your full name"
                     className="mt-2 w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 text-sm outline-none transition-all"
                   />
@@ -117,6 +142,7 @@ export default function Contact() {
                   <input
                     required
                     type="tel"
+                    name="phone"
                     placeholder="+91 98765 43210"
                     className="mt-2 w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 text-sm outline-none transition-all"
                   />
@@ -126,6 +152,7 @@ export default function Contact() {
                   <input
                     required
                     type="email"
+                    name="email"
                     placeholder="you@example.com"
                     className="mt-2 w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 text-sm outline-none transition-all"
                   />
@@ -134,6 +161,7 @@ export default function Contact() {
                   <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider">Service Required</label>
                   <select
                     required
+                    name="service"
                     defaultValue=""
                     className="mt-2 w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 text-sm outline-none transition-all"
                   >
@@ -149,6 +177,7 @@ export default function Contact() {
                   <label className="text-xs font-semibold text-slate-600 uppercase tracking-wider">Message</label>
                   <textarea
                     required
+                    name="message"
                     rows={4}
                     placeholder="Tell us about your project..."
                     className="mt-2 w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 text-sm outline-none transition-all resize-none"
@@ -158,12 +187,16 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={sent}
+                disabled={isSubmitting || sent}
                 className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 hover:shadow-xl hover:shadow-blue-500/30 text-white rounded-xl text-sm font-semibold transition-all hover:scale-[1.01] disabled:opacity-80"
               >
                 {sent ? (
                   <>
                     <CheckCircle2 className="w-4 h-4" /> Message Sent!
+                  </>
+                ) : isSubmitting ? (
+                  <>
+                    Sending...
                   </>
                 ) : (
                   <>
