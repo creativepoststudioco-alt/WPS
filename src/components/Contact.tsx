@@ -25,7 +25,7 @@ export default function Contact() {
 
       if (data.success) {
         setSent(true);
-        e.currentTarget.reset(); // Form ko clear karne ke liye
+        e.currentTarget.reset();
         setTimeout(() => setSent(false), 5000);
       } else {
         alert("Kuch galat hua. Kripya dobara prayas karein.");
@@ -82,9 +82,9 @@ export default function Contact() {
 
                 <div className="mt-8 space-y-4">
                   {[
-                    { icon: Phone, label: 'Phone', value: '+91 99999 99999' },
-                    { icon: Mail, label: 'Email', value: 'hello@webproxy.in' },
-                    { icon: MapPin, label: 'Office', value: 'Mumbai, India' },
+                    { icon: Phone, label: 'Phone', value: '+61 491 570 156' },
+                    { icon: Mail, label: 'Email', value: 'webproxysolutions@gmail.com' },
+                    { icon: MapPin, label: 'Office', value: 'Kolkata, India' },
                   ].map((c) => (
                     <div key={c.label} className="flex items-start gap-3">
                       <div className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
@@ -100,7 +100,7 @@ export default function Contact() {
 
                 <div className="mt-8 flex gap-3">
                   <a
-                    href="https://wa.me/919999999999"
+                    href="https://wa.me/61491570156"
                     target="_blank"
                     rel="noreferrer"
                     className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 bg-green-500 hover:bg-green-600 text-white rounded-xl text-sm font-semibold transition-all hover:scale-[1.02]"
